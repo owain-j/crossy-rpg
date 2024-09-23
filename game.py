@@ -27,11 +27,13 @@ class Game:
         
         # showng the images on screen
         self.game_window.blit(self.background.image, (self.background.x, self.background.y))
-        self.game_window.blit(self.portal.image, (self.portal.x, self.portal.y))
-        self.game_window.blit(self.player.image, (self.player.x, self.player.y))
-        
+        self.draw(self.portal)
+        self.draw(self.player)
 
         pygame.display.update()
+
+    def draw(self, game_object):
+        self.game_window.blit(game_object.image, (game_object.x, game_object.y))
         
         
     def run_game_loop(self):
